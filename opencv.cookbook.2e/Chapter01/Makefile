@@ -13,6 +13,7 @@ all: $(PROGS)
 
 clean:
 	$(RM) $(PROGS)
+	$(RM) -r build
 
 %: %.cpp
 	$(CXX) -o $@ $(CXXFLAGS) $(INCLUDES) $^ $(LDFLAGS) $(LDPATH)

@@ -21,6 +21,10 @@
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 
+#if CV_MAJOR_VERSION >= 3
+#include <opencv2/imgproc.hpp>  // for cv::circle
+#endif
+
 void onMouse( int event, int x, int y, int flags, void* param)	{
 	
 	cv::Mat *im= reinterpret_cast<cv::Mat*>(param);
