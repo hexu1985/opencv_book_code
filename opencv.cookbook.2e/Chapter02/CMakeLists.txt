@@ -12,7 +12,7 @@ project("${project_name}")
 
 # add opencv package to the project
 find_package( OpenCV REQUIRED )
-MESSAGE(“OpenCV version : ${OpenCV_VERSION}”)
+MESSAGE(?OpenCV version : ${OpenCV_VERSION}?)
 
 # add opencv include directories to the project
 include_directories( ${OpenCV_INCLUDE_DIRS} ) 
@@ -23,6 +23,7 @@ add_executable( colorReduce colorReduce.cpp)
 add_executable( contrast contrast.cpp)
 add_executable( addImages addImages.cpp)
 add_executable( remapping remapping.cpp)
+add_executable( clone clone.cpp)
 
 # link libraries
 target_link_libraries( saltImage ${OpenCV_LIBS})
@@ -30,3 +31,4 @@ target_link_libraries( colorReduce ${OpenCV_LIBS})
 target_link_libraries( contrast ${OpenCV_LIBS})
 target_link_libraries( addImages ${OpenCV_LIBS})
 target_link_libraries( remapping ${OpenCV_LIBS})
+target_link_libraries( clone ${OpenCV_LIBS})
