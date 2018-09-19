@@ -12,7 +12,7 @@ project("${project_name}")
 
 # add opencv package to the project
 find_package( OpenCV REQUIRED )
-MESSAGE(“OpenCV version : ${OpenCV_VERSION}”)
+MESSAGE(?OpenCV version : ${OpenCV_VERSION}?)
 
 # add opencv include directories to the project
 include_directories( ${OpenCV_INCLUDE_DIRS} ) 
@@ -21,8 +21,16 @@ include_directories( ${OpenCV_INCLUDE_DIRS} )
 add_executable( loadDisplaySave loadDisplaySave.cpp)
 add_executable( logo logo.cpp)
 add_executable( mat mat.cpp)
+add_executable( imread imread.cpp)
+add_executable( flip flip.cpp)
+add_executable( draw draw.cpp)
+add_executable( onMouse onMouse.cpp)
 
 # link libraries
 target_link_libraries( loadDisplaySave ${OpenCV_LIBS})
 target_link_libraries( logo ${OpenCV_LIBS})
 target_link_libraries( mat ${OpenCV_LIBS})
+target_link_libraries( imread ${OpenCV_LIBS})
+target_link_libraries( flip ${OpenCV_LIBS})
+target_link_libraries( draw ${OpenCV_LIBS})
+target_link_libraries( onMouse ${OpenCV_LIBS})
